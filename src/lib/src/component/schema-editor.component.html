@@ -1,0 +1,23 @@
+<div *ngFor="let item of props">
+
+
+
+
+
+  <number-control *ngIf="item.data.type === 'number'" [data]="item"></number-control>
+  <string-control *ngIf="item.data.type === 'string'" (keyChanged)="onKeyChanged()" [data]="item"></string-control>
+
+
+<!--
+  <div *ngIf="schema.properties[key]?.type!='number' && schema.properties[key]?.type!='string'">
+    {{key}}
+
+    {{schema.properties[key]?.type}}
+  </div>
+  -->
+
+</div>
+
+<md-select placeholder="Add Property" [(ngModel)]="myState" floatPlaceholder="never">
+  <md-option (click)="addProperty(state)" *ngFor="let state of controlTypes" >{{ state }}</md-option>
+</md-select>
