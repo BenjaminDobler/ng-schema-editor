@@ -5,7 +5,7 @@
 
 
   <number-control *ngIf="item.data.type === 'number'" [data]="item"></number-control>
-  <string-control *ngIf="item.data.type === 'string'" (keyChanged)="onKeyChanged()" [data]="item"></string-control>
+  <string-control *ngIf="item.data.type === 'string'" (removeProperty)="onRemoveProperty($event)" (keyChanged)="onKeyChanged()" [data]="item"></string-control>
 
 
 <!--

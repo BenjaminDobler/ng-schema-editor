@@ -22,6 +22,9 @@ export class StringControlComponent implements OnInit {
   @Output()
   public keyChanged:EventEmitter<any> = new EventEmitter<any>();
 
+  @Output()
+  public removeProperty:EventEmitter<any> = new EventEmitter<any>();
+
 
   constructor() { }
 
@@ -47,6 +50,10 @@ export class StringControlComponent implements OnInit {
 
   deleteField(field:string) {
     delete this.data.data[field];
+  }
+
+  deleteProperty() {
+    this.removeProperty.emit(this.data);
   }
 
 }

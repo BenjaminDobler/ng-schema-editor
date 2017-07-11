@@ -40,11 +40,9 @@ export class SchemaEditorComponent {
 
 
   constructor() {
-    console.log('hallo');
   }
 
   getProperties() {
-    console.log("Get Schema ", this._schema.properties);
     return this._schema.properties;
   }
 
@@ -57,6 +55,12 @@ export class SchemaEditorComponent {
     });
     newSchema.properties = newProperties;
     this.schema = newSchema;
+  }
+
+  onRemoveProperty(data:any) {
+    let i:number = this.props.indexOf(data);
+    this.props.splice(i, 1);
+    this.onKeyChanged();
   }
 
   getSchemaJsonString() {

@@ -54,6 +54,7 @@
 <md-select placeholder="Add Property" [(ngModel)]="myState" floatPlaceholder="never">
   <md-option (click)="addField(state)" *ngFor="let state of fields">{{ state }}</md-option>
 </md-select>
+<button (click)="deleteProperty()">-</button>
 
 
 
