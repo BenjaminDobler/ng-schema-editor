@@ -1,12 +1,12 @@
-<div style="display: flex;width:100%;background: #999999" >
-  <div style="font-weight: bold" contenteditable #key (blur)="onKeyChanged(key.textContent)">{{data.key}}</div>
-  <div style="flex:1"></div>
-  <div style="background: #3367d6;border-radius: 3px;padding: 3px;color:#fff" (click)="collapsed=!collapsed">
+<div class="header" >
+  <div class="property-name" contenteditable #key (blur)="onKeyChanged(key.textContent)">{{data.key}}</div>
+  <div class="spacer"></div>
+  <div class="type-badge" (click)="collapsed=!collapsed">
     String
   </div>
 </div>
 
-<div style="padding-left: 20px;padding-top: 10px" *ngIf="!collapsed">
+<div class="content" *ngIf="!collapsed">
 
   <div class="field-container" *ngIf="data.data.hasOwnProperty('description')">
     <md-input-container>
