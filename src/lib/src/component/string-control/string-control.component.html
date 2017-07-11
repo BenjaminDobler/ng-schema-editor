@@ -1,4 +1,4 @@
-<div style="display: flex;width:100%">
+<div style="display: flex;width:100%;background: #999999" >
   <div style="font-weight: bold" contenteditable #key (blur)="onKeyChanged(key.textContent)">{{data.key}}</div>
   <div style="flex:1"></div>
   <div style="background: #3367d6;border-radius: 3px;padding: 3px;color:#fff" (click)="collapsed=!collapsed">
@@ -7,43 +7,52 @@
 </div>
 
 <div style="padding-left: 20px;padding-top: 10px" *ngIf="!collapsed">
-<md-input-container>
-  <input mdInput placeholder="Description" [(ngModel)]="data.data.description">
-</md-input-container>
 
-<!--
-<md-input-container *ngIf="data.data.format">
-  <input mdInput placeholder="format" [(ngModel)]="data.data.format">
-</md-input-container>
--->
-
-  <md-select *ngIf="data.data.hasOwnProperty('format')" placeholder="Format" [(ngModel)]="data.data.format" >
-    <md-option *ngFor="let format of formats" [value]="format" >{{ format }}</md-option>
-  </md-select>
+  <div class="field-container" *ngIf="data.data.hasOwnProperty('description')">
+    <md-input-container>
+      <input mdInput placeholder="Description" [(ngModel)]="data.data.description">
+    </md-input-container>
+    <button (click)="deleteField('description')">-</button>
+  </div>
 
 
-  <md-input-container *ngIf="data.data.hasOwnProperty('maxLength')">
-    <input mdInput type="number" placeholder="maxLength" [(ngModel)]="data.data.maxLength">
-  </md-input-container>
+  <div class="field-container" *ngIf="data.data.hasOwnProperty('format')">
+    <md-select placeholder="Format" [(ngModel)]="data.data.format">
+      <md-option *ngFor="let format of formats" [value]="format">{{ format }}</md-option>
+    </md-select>
+    <button (click)="deleteField('format')">-</button>
+  </div>
 
-  <md-input-container *ngIf="data.data.hasOwnProperty('minLength')">
-    <input mdInput type="number" placeholder="maxLength" [(ngModel)]="data.data.minLength">
-  </md-input-container>
+
+  <div *ngIf="data.data.hasOwnProperty('maxLength')">
+    <md-input-container>
+      <input mdInput type="number" placeholder="maxLength" [(ngModel)]="data.data.maxLength">
+    </md-input-container>
+    <button (click)="deleteField('maxLength')">-</button>
+  </div>
+
+  <div *ngIf="data.data.hasOwnProperty('minLength')">
+    <md-input-container>
+      <input mdInput type="number" placeholder="maxLength" [(ngModel)]="data.data.minLength">
+    </md-input-container>
+    <button (click)="deleteField('minLength')">-</button>
+  </div>
 
 
-<div *ngIf="data.data.enum">
-  Enum
-  <ul>
-    <li *ngFor="let e of data.data.enum;let i = index">
-      <input [value]="e" (change)="data.data.enum[i]=$event.currentTarget.value">
-      <button (click)="data.data.enum.splice(i,1)">-</button>
-    </li>
-    <button (click)="data.data.enum.push('')">+</button>
-  </ul>
-</div>
+  <div *ngIf="data.data.enum">
+    Enum
+    <ul>
+      <li *ngFor="let e of data.data.enum;let i = index">
+        <input [value]="e" (change)="data.data.enum[i]=$event.currentTarget.value">
+        <button (click)="data.data.enum.splice(i,1)">-</button>
+      </li>
+      <button (click)="data.data.enum.push('')">+</button>
+    </ul>
+  </div>
+
 </div>
 <md-select placeholder="Add Property" [(ngModel)]="myState" floatPlaceholder="never">
-  <md-option (click)="addField(state)" *ngFor="let state of fields" >{{ state }}</md-option>
+  <md-option (click)="addField(state)" *ngFor="let state of fields">{{ state }}</md-option>
 </md-select>
 
 

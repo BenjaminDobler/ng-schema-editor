@@ -45,4 +45,8 @@ export class StringControlComponent implements OnInit {
     }
   }
 
+  deleteField(field:string) {
+    delete this.data.data[field];
+  }
+
 }

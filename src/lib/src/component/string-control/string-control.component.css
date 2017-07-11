@@ -12,4 +12,20 @@
 
 md-input-container {
   width: 100%;
+  flex:1;
+}
+
+
+.field-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.field-container md-input-container {
+  flex: 1;
+}
+
+.field-container md-select {
+  //flex: 1;
 }
