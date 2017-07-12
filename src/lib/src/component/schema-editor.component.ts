@@ -69,9 +69,11 @@ export class SchemaEditorComponent {
   }
 
   public addProperty(type:string) {
-    this.schema.properties.untitled = {
-      type: 'string',
-      description: 'tbd'
+    if (type === 'string') {
+      this.schema.properties.untitled = {
+        type: 'string',
+        description: 'tbd'
+      };
     }
     this.updateProps();
   }

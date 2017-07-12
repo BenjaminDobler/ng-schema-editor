@@ -1,0 +1,34 @@
+<div class="header" >
+  <div class="property-name" contenteditable #key (blur)="onKeyChanged(key.textContent)">{{data.key}}</div>
+  <div class="spacer"></div>
+  <div class="type-badge" (click)="collapsed=!collapsed">
+    Boolean
+  </div>
+</div>
+
+<div class="content" *ngIf="!collapsed">
+
+  <div class="field-container" *ngIf="data.data.hasOwnProperty('description')">
+    <md-input-container>
+      <input mdInput placeholder="Description" [(ngModel)]="data.data.description">
+    </md-input-container>
+    <button (click)="deleteField('description')">-</button>
+  </div>
+
+
+  <div class="field-container" *ngIf="data.data.hasOwnProperty('format')">
+    <md-select placeholder="Format" [(ngModel)]="data.data.format">
+      <md-option *ngFor="let format of formats" [value]="format">{{ format }}</md-option>
+    </md-select>
+    <button (click)="deleteField('format')">-</button>
+  </div>
+
+
+</div>
+<md-select placeholder="Add Property" [(ngModel)]="myState" floatPlaceholder="never">
+  <md-option (click)="addField(state)" *ngFor="let state of fields">{{ state }}</md-option>
+</md-select>
+<button (click)="deleteProperty()">-</button>
+
+
+

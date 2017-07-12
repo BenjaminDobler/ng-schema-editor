@@ -1,20 +1,10 @@
 <div *ngFor="let item of props">
 
 
-
-
-
   <number-control *ngIf="item.data.type === 'number'" [data]="item"></number-control>
+  <boolean-control *ngIf="item.data.type === 'boolean'" (removeProperty)="onRemoveProperty($event)" (keyChanged)="onKeyChanged()" [data]="item"></boolean-control>
   <string-control *ngIf="item.data.type === 'string'" (removeProperty)="onRemoveProperty($event)" (keyChanged)="onKeyChanged()" [data]="item"></string-control>
 
-
-<!--
-  <div *ngIf="schema.properties[key]?.type!='number' && schema.properties[key]?.type!='string'">
-    {{key}}
-
-    {{schema.properties[key]?.type}}
-  </div>
-  -->
 
 </div>
 
