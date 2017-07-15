@@ -11,6 +11,14 @@ export class StringControlComponent implements OnInit {
   @Input()
   public data: any;
 
+  @Input()
+  public parentPath: string = '';
+
+  public get path():string  {
+    console.log("GET PATH ", this.parentPath)
+    return this.parentPath + '.' + this.data.key;
+  }
+
   collapsed: boolean = false;
 
   fields: Array<string> = ['enum', 'maxLength', 'minLength', 'description', 'format'];

@@ -7,15 +7,16 @@
 </div>
 
 <div class="content" *ngIf="!collapsed">
+  {{path}}
 
   <div *ngFor="let item of props">
     <number-control *ngIf="item.data.type === 'number'" [data]="item"></number-control>
     <boolean-control *ngIf="item.data.type === 'boolean'" (removeProperty)="onRemoveProperty($event)"
-                     (keyChanged)="onKeyChanged()" [data]="item"></boolean-control>
+                     (keyChanged)="onKeyChanged()" [data]="item" [parentPath]="path"></boolean-control>
     <string-control *ngIf="item.data.type === 'string'" (removeProperty)="onRemoveProperty($event)"
-                    (keyChanged)="onKeyChanged()" [data]="item"></string-control>
+                    (keyChanged)="onKeyChanged()" [data]="item" [parentPath]="path"></string-control>
     <object-control *ngIf="item.data.type === 'object'" (removeProperty)="onRemoveProperty($event)"
-                    (keyChanged)="onKeyChanged()" [data]="item"></object-control>
+                    (keyChanged)="onKeyChanged()" [data]="item" [parentPath]="path"></object-control>
   </div>
 
   <md-select placeholder="Add Property" [(ngModel)]="myState" floatPlaceholder="never">

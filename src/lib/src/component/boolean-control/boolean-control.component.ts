@@ -11,12 +11,19 @@ export class BooleanControlComponent implements OnInit {
   @Input()
   public data: any;
 
+  @Input()
+  public parentPath: string = '';
+
   collapsed: boolean = false;
 
 
   fields: Array<string> = [];
   formats: Array<string> = ['date-time', 'email', 'hostname', 'ipv4', 'ipv6', 'uri', 'uri-reference', 'uri-template', 'json-pointer', 'uuid'];
 
+
+  public get path():string  {
+    return this.parentPath + '.' + this.data.key;
+  }
 
   @Output()
   public keyChanged: EventEmitter<any> = new EventEmitter<any>();

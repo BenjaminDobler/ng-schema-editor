@@ -19,6 +19,16 @@ export class ObjectControlComponent implements OnInit {
   }
 
   @Input()
+  public parentPath: string = '';
+
+  public get path():string  {
+    if (this.parentPath!='') {
+      this.parentPath + '.' + this.data.key;
+    }
+    return this.data.key;
+  }
+
+  @Input()
   set data(value: any) {
     this._data = value;
     this.updateProps();
