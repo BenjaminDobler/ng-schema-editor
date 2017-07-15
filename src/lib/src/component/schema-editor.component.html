@@ -1,13 +1,5 @@
-<div *ngFor="let item of props">
 
 
-  <number-control *ngIf="item.data.type === 'number'" [data]="item"></number-control>
-  <boolean-control *ngIf="item.data.type === 'boolean'" (removeProperty)="onRemoveProperty($event)" (keyChanged)="onKeyChanged()" [data]="item"></boolean-control>
-  <string-control *ngIf="item.data.type === 'string'" (removeProperty)="onRemoveProperty($event)" (keyChanged)="onKeyChanged()" [data]="item"></string-control>
+<object-control [data]="rootItem"></object-control>
 
 
-</div>
-
-<md-select placeholder="Add Property" [(ngModel)]="myState" floatPlaceholder="never">
-  <md-option (click)="addProperty(state)" *ngFor="let state of controlTypes" >{{ state }}</md-option>
-</md-select>

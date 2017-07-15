@@ -1,0 +1,26 @@
+<div class="header">
+  <div class="property-name" contenteditable #key (blur)="onKeyChanged(key.textContent)">{{data.key}}</div>
+  <div class="spacer"></div>
+  <div class="type-badge" (click)="collapsed=!collapsed">
+    Object
+  </div>
+</div>
+
+<div class="content" *ngIf="!collapsed">
+
+  <div *ngFor="let item of props">
+    <number-control *ngIf="item.data.type === 'number'" [data]="item"></number-control>
+    <boolean-control *ngIf="item.data.type === 'boolean'" (removeProperty)="onRemoveProperty($event)"
+                     (keyChanged)="onKeyChanged()" [data]="item"></boolean-control>
+    <string-control *ngIf="item.data.type === 'string'" (removeProperty)="onRemoveProperty($event)"
+                    (keyChanged)="onKeyChanged()" [data]="item"></string-control>
+    <object-control *ngIf="item.data.type === 'object'" (removeProperty)="onRemoveProperty($event)"
+                    (keyChanged)="onKeyChanged()" [data]="item"></object-control>
+  </div>
+
+  <md-select placeholder="Add Property" [(ngModel)]="myState" floatPlaceholder="never">
+    <md-option (click)="addProperty(state)" *ngFor="let state of controlTypes">{{ state }}</md-option>
+  </md-select>
+
+
+</div>

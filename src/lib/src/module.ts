@@ -7,13 +7,14 @@ import {KeyPipePipe} from "./component/key-pipe.pipe";
 import {StringControlComponent} from "./component/string-control/string-control.component";
 import {MaterialModule} from "@angular/material";
 import {BooleanControlComponent} from "./component/boolean-control/boolean-control.component";
+import {ObjectControlComponent} from "./component/object-control/object-control.component";
 
 
 @NgModule({
   imports: [
     CommonModule, MaterialModule, FormsModule
   ],
-  declarations: [NumberControlComponent, SchemaEditorComponent, KeyPipePipe, StringControlComponent, BooleanControlComponent],
+  declarations: [NumberControlComponent, SchemaEditorComponent, KeyPipePipe, StringControlComponent, BooleanControlComponent, ObjectControlComponent],
   exports: [SchemaEditorComponent]
 })
 export class LibModule { }

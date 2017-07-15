@@ -19,64 +19,85 @@ export class SchemaEditorComponent {
   @Input()
   set schema(value: any) {
     this._schema = value;
-    this.updateProps();
-    console.log(this.props);
+    this.rootItem = {
+      key: 'root',
+      data: this._schema
+    };
+    //this.updateProps();
+    //console.log(this.props);
   }
 
-  updateProps() {
-    this.props = [];
-    for(var i in this._schema.properties) {
-      this.props.push({
-        key: i,
-        data: this._schema.properties[i]
-      });
-    }
-  }
-
-  public controlTypes:Array<string> = ['string', 'number', 'array'];
-  public props:Array<any> = [];
-
-  private _schema:any;
-
-
-  constructor() {
-  }
-
-  getProperties() {
-    return this._schema.properties;
-  }
-
-
-  onKeyChanged() {
-    let newSchema:any = Object.assign({}, this.schema);
-    let newProperties = {};
-    this.props.forEach((p)=>{
-      newProperties[p.key] = p.data;
-    });
-    newSchema.properties = newProperties;
-    this.schema = newSchema;
-  }
-
-  onRemoveProperty(data:any) {
-    let i:number = this.props.indexOf(data);
-    this.props.splice(i, 1);
-    this.onKeyChanged();
-  }
+  public rootItem: any;
+  private _schema: any;
 
   getSchemaJsonString() {
-    return JSON.stringify(this.schema, null, 4);
+    return JSON.stringify(this.rootItem.data, null, 4);
 
   }
 
-  public addProperty(type:string) {
-    if (type === 'string') {
-      this.schema.properties.untitled = {
-        type: 'string',
-        description: 'tbd'
-      };
-    }
-    this.updateProps();
-  }
 
+
+
+  /*
+
+   updateProps() {
+   this.props = [];
+   for(var i in this._schema.properties) {
+   this.props.push({
+   key: i,
+   data: this._schema.properties[i]
+   });
+   }
+   }
+
+   public controlTypes:Array<string> = ['string', 'number', 'array', 'boolean'];
+   public props:Array<any> = [];
+
+
+
+   constructor() {
+   }
+
+   getProperties() {
+   return this._schema.properties;
+   }
+
+
+   onKeyChanged() {
+   let newSchema:any = Object.assign({}, this.schema);
+   let newProperties = {};
+   this.props.forEach((p)=>{
+   newProperties[p.key] = p.data;
+   });
+   newSchema.properties = newProperties;
+   this.schema = newSchema;
+   }
+
+   onRemoveProperty(data:any) {
+   let i:number = this.props.indexOf(data);
+   this.props.splice(i, 1);
+   this.onKeyChanged();
+   }
+
+   getSchemaJsonString() {
+   return JSON.stringify(this.schema, null, 4);
+
+   }
+
+   public addProperty(type:string) {
+   if (type === 'string') {
+   this.schema.properties.untitled = {
+   type: 'string',
+   description: 'tbd'
+   };
+   } else if (type === 'boolean') {
+   this.schema.properties.untitled = {
+   type: 'boolean',
+   description: 'tbd'
+   };
+   }
+   this.updateProps();
+   }
+   */
 
 }
