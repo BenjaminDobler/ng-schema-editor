@@ -8,8 +8,11 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class ObjectControlComponent implements OnInit {
 
 
-  public controlTypes:Array<string> = ['string', 'number', 'array', 'boolean', 'object'];
-  public props:Array<any> = [];
+  @Output()
+  public keyChanged: EventEmitter<any> = new EventEmitter<any>();
+
+  public controlTypes: Array<string> = ['string', 'number', 'array', 'boolean', 'object'];
+  public props: Array<any> = [];
 
   get data(): any {
     return this._data;
@@ -30,7 +33,7 @@ export class ObjectControlComponent implements OnInit {
 
   updateProps() {
     this.props = [];
-    for(var i in this.data.data.properties) {
+    for (var i in this.data.data.properties) {
       this.props.push({
         key: i,
         data: this.data.data.properties[i]
@@ -39,7 +42,7 @@ export class ObjectControlComponent implements OnInit {
   }
 
 
-  public addProperty(type:string) {
+  public addProperty(type: string) {
     if (type === 'string') {
       this.data.data.properties.untitled = {
         type: 'string',
@@ -60,20 +63,24 @@ export class ObjectControlComponent implements OnInit {
     this.updateProps();
   }
 
-  onKeyChanged() {
-    console.log("On Key Changed");
-    let newSchema:any = Object.assign({}, this.data.data);
-    let newProperties = {};
-    this.props.forEach((p)=>{
-      newProperties[p.key] = p.data;
-    });
-    newSchema.properties = newProperties;
-    this.data.data = newSchema;
-    console.log("NEW SCHEMA ", newSchema);
+  onKeyChanged(data?:any) {
+    if (data) {
+        this.data.key = data;
+        this.keyChanged.emit();
+    } else {
+      let newSchema: any = Object.assign({}, this.data.data);
+      let newProperties = {};
+      this.props.forEach((p) => {
+        newProperties[p.key] = p.data;
+      });
+      newSchema.properties = newProperties;
+      this.data.data = newSchema;
+      this.keyChanged.emit();
+    }
   }
 
-  onRemoveProperty(data:any) {
-    let i:number = this.props.indexOf(data);
+  onRemoveProperty(data: any) {
+    let i: number = this.props.indexOf(data);
     this.props.splice(i, 1);
     this.onKeyChanged();
   }

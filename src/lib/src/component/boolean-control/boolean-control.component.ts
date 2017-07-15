@@ -14,7 +14,7 @@ export class BooleanControlComponent implements OnInit {
   collapsed: boolean = false;
 
 
-  fields: Array<string> = ['enum', 'maxLength', 'minLength', 'description', 'format'];
+  fields: Array<string> = [];
   formats: Array<string> = ['date-time', 'email', 'hostname', 'ipv4', 'ipv6', 'uri', 'uri-reference', 'uri-template', 'json-pointer', 'uuid'];
 
 

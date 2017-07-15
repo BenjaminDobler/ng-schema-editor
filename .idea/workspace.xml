@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccf7073c-e087-412b-9983-fcfd69610abf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo/app/app.module.ts" afterPath="$PROJECT_DIR$/src/demo/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/src/component/schema-editor.component.html" afterPath="$PROJECT_DIR$/src/lib/src/component/schema-editor.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/src/component/schema-editor.component.ts" afterPath="$PROJECT_DIR$/src/lib/src/component/schema-editor.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/src/component/schema-editor.module.ts" afterPath="$PROJECT_DIR$/src/lib/src/component/schema-editor.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/src/module.ts" afterPath="$PROJECT_DIR$/src/lib/src/module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/src/component/boolean-control/boolean-control.component.ts" afterPath="$PROJECT_DIR$/src/lib/src/component/boolean-control/boolean-control.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.ts" afterPath="$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.ts" afterPath="$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/src/demo/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#schema-editor#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -47,21 +41,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="object-control.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="object-control.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+            <state relative-caret-position="323">
+              <caret line="65" column="20" lean-forward="false" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="object-control.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="object-control.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="boolean-control.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/src/component/boolean-control/boolean-control.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7">
+              <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -80,8 +84,8 @@
       <file leaf-file-name="string-control.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+            <state relative-caret-position="332">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="35" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -90,8 +94,8 @@
       <file leaf-file-name="string-control.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="40" />
+            <state relative-caret-position="15">
+              <caret line="1" column="59" lean-forward="false" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -107,21 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/src/module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="schema-editor.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/src/component/schema-editor.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -171,8 +165,6 @@
         <option value="$PROJECT_DIR$/src/lib/src/component/schema-editor.component.css" />
         <option value="$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.css" />
         <option value="$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.html" />
-        <option value="$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.ts" />
-        <option value="$PROJECT_DIR$/src/lib/src/component/boolean-control/boolean-control.component.ts" />
         <option value="$PROJECT_DIR$/src/lib/src/component/boolean-control/boolean-control.component.html" />
         <option value="$PROJECT_DIR$/src/lib/src/component/object-control/object.control.component.css" />
         <option value="$PROJECT_DIR$/src/lib/src/component/schema-editor.module.ts" />
@@ -181,9 +173,11 @@
         <option value="$PROJECT_DIR$/src/lib/src/component/schema-editor.component.html" />
         <option value="$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.css" />
         <option value="$PROJECT_DIR$/src/demo/app/app.component.html" />
-        <option value="$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.ts" />
         <option value="$PROJECT_DIR$/src/lib/src/component/schema-editor.component.ts" />
         <option value="$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.html" />
+        <option value="$PROJECT_DIR$/src/lib/src/component/boolean-control/boolean-control.component.ts" />
+        <option value="$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.ts" />
+        <option value="$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.ts" />
       </list>
     </option>
   </component>
@@ -372,6 +366,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boolean-control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ng-schema-editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ng-schema-editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="demo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -520,7 +544,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499712835726</updated>
       <workItem from="1499712837097" duration="2092000" />
-      <workItem from="1499715911367" duration="9097000" />
+      <workItem from="1499715911367" duration="10040000" />
     </task>
     <task id="LOCAL-00001" summary="changed readme">
       <created>1499716491896</created>
@@ -533,7 +557,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11189000" />
+    <option name="totallyTimeSpent" value="12132000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1869" height="1127" extended-state="0" />
@@ -687,7 +711,7 @@
         <state relative-caret-position="75">
           <caret line="5" column="77" lean-forward="false" selection-start-line="5" selection-start-column="77" selection-end-line="5" selection-end-column="77" />
           <folding>
-            <element signature="e#0#46#0" expanded="true" />
+            <element signature="e#0#46#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -775,6 +799,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -864,14 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/src/component/boolean-control/boolean-control.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/src/component/boolean-control/boolean-control.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
@@ -901,7 +918,7 @@
         <state relative-caret-position="135">
           <caret line="9" column="67" lean-forward="true" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
           <folding>
-            <element signature="e#0#46#0" expanded="true" />
+            <element signature="e#0#46#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -909,7 +926,7 @@
     <entry file="file://$PROJECT_DIR$/src/lib/src/module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -917,15 +934,7 @@
     <entry file="file://$PROJECT_DIR$/src/lib/src/component/schema-editor.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="40" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -949,18 +958,10 @@
     <entry file="file://$PROJECT_DIR$/src/demo/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#schema-editor#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -972,10 +973,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/lib/src/component/boolean-control/boolean-control.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+        <state relative-caret-position="7">
+          <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -984,6 +985,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="59" lean-forward="false" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/src/component/string-control/string-control.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="35" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/src/component/object-control/object-control.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="65" column="20" lean-forward="false" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
           <folding />
         </state>
       </provider>
