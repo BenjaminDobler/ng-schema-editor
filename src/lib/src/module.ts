@@ -15,7 +15,7 @@ import {SchemaEditorService} from "./service/schema-editor.service";
   imports: [
     CommonModule, MaterialModule, FormsModule
   ],
-  declarations: [NumberControlComponent, SchemaEditorComponent, KeyPipePipe, StringControlComponent, BooleanControlComponent, ObjectControlComponent],
+  declarations: [NumberControlComponent, SchemaEditorComponent, StringControlComponent, BooleanControlComponent, ObjectControlComponent],
   exports: [SchemaEditorComponent],
   providers: [SchemaEditorService]
 })

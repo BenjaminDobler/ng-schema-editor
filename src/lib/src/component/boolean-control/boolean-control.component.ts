@@ -1,38 +1,22 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {SchemaEditorService} from "../../service/schema-editor.service";
+import {BaseControl} from "../base-control/base-control.component";
 
 @Component({
   selector: 'boolean-control',
   templateUrl: './boolean-control.component.html',
   styleUrls: ['./boolean-control.component.css']
 })
-export class BooleanControlComponent implements OnInit {
-
-
-  @Input()
-  public data: any;
-
-  @Input()
-  public parentPath: string = '';
-
-  collapsed: boolean = false;
+export class BooleanControlComponent extends BaseControl implements OnInit {
 
 
   fields: Array<string> = [];
   formats: Array<string> = ['date-time', 'email', 'hostname', 'ipv4', 'ipv6', 'uri', 'uri-reference', 'uri-template', 'json-pointer', 'uuid'];
 
 
-  public get path():string  {
-    return this.parentPath + '.' + this.data.key;
-  }
 
-  @Output()
-  public keyChanged: EventEmitter<any> = new EventEmitter<any>();
-
-  @Output()
-  public removeProperty: EventEmitter<any> = new EventEmitter<any>();
-
-
-  constructor() {
+  constructor(public schemaService:SchemaEditorService) {
+    super(schemaService);
   }
 
   ngOnInit() {

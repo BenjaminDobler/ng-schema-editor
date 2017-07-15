@@ -13,4 +13,12 @@ export class SchemaEditorService {
   public controlMap:any = {};
 
 
+
+  public registerControl(path) {
+    if (!this.controlMap[path]) {
+      this.controlMap[path] = {};
+    }
+  }
+
+
 }
