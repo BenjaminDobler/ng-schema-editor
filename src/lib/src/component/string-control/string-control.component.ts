@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {SchemaEditorService} from "../../service/schema-editor.service";
 
 @Component({
   selector: 'string-control',
@@ -6,6 +7,22 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./string-control.component.css']
 })
 export class StringControlComponent implements OnInit {
+  get collapsed(): boolean {
+    if (!this.schemaService.controlMap[this.path]) {
+      return false;
+    }
+    return this.schemaService.controlMap[this.path].collapsed;
+  }
+
+  set collapsed(value: boolean) {
+    this._collapsed = value;
+    if (!this.schemaService.controlMap[this.path]) {
+      this.schemaService.controlMap[this.path] = {};
+    }
+    this.schemaService.controlMap[this.path].collapsed = value;
+  }
+
+  private _collapsed: boolean = false;
 
 
   @Input()
@@ -15,11 +32,10 @@ export class StringControlComponent implements OnInit {
   public parentPath: string = '';
 
   public get path():string  {
-    console.log("GET PATH ", this.parentPath)
     return this.parentPath + '.' + this.data.key;
   }
 
-  collapsed: boolean = false;
+
 
   fields: Array<string> = ['enum', 'maxLength', 'minLength', 'description', 'format'];
   formats: Array<string> = ['date-time', 'email', 'hostname', 'ipv4', 'ipv6', 'uri', 'uri-reference', 'uri-template', 'json-pointer', 'uuid'];
@@ -31,7 +47,7 @@ export class StringControlComponent implements OnInit {
   public removeProperty: EventEmitter<any> = new EventEmitter<any>();
 
 
-  constructor() {
+  constructor(public schemaService:SchemaEditorService) {
   }
 
   ngOnInit() {

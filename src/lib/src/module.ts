@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {NumberControlComponent} from "./component/number-control/number-control.component";
@@ -8,6 +8,7 @@ import {StringControlComponent} from "./component/string-control/string-control.
 import {MaterialModule} from "@angular/material";
 import {BooleanControlComponent} from "./component/boolean-control/boolean-control.component";
 import {ObjectControlComponent} from "./component/object-control/object-control.component";
+import {SchemaEditorService} from "./service/schema-editor.service";
 
 
 @NgModule({
@@ -15,6 +16,8 @@ import {ObjectControlComponent} from "./component/object-control/object-control.
     CommonModule, MaterialModule, FormsModule
   ],
   declarations: [NumberControlComponent, SchemaEditorComponent, KeyPipePipe, StringControlComponent, BooleanControlComponent, ObjectControlComponent],
-  exports: [SchemaEditorComponent]
+  exports: [SchemaEditorComponent],
+  providers: [SchemaEditorService]
 })
-export class LibModule { }
+export class LibModule {
+}
