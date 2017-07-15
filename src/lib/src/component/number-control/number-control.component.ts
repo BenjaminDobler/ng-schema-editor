@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BaseControl} from "../base-control/base-control.component";
-import {SchemaEditorService} from "../../service/schema-editor.service";
+import {BaseControl} from '../base-control/base-control.component';
+import {SchemaEditorService} from '../../service/schema-editor.service';
 
 @Component({
   selector: 'number-control',

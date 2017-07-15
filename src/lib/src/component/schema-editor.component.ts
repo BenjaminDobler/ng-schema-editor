@@ -3,7 +3,8 @@
  */
 
 
-import {Component, Input} from "@angular/core";
+import {Component, Input} from '@angular/core';
+import {SchemaEditorService} from '../service/schema-editor.service';
 @Component({
   selector: 'schema-editor',
   templateUrl: './schema-editor.component.html',
@@ -23,12 +24,15 @@ export class SchemaEditorComponent {
       key: 'root',
       data: this._schema
     };
-    //this.updateProps();
-    //console.log(this.props);
   }
 
   public rootItem: any;
   private _schema: any;
+
+  constructor(public schemaService: SchemaEditorService) {
+
+  }
+
 
   getSchemaJsonString() {
     return JSON.stringify(this.rootItem.data, null, 4);
@@ -36,68 +40,13 @@ export class SchemaEditorComponent {
   }
 
 
+  collapseAll() {
+    this.schemaService.collapseAll();
+  }
 
+  unCollapseAll() {
+    this.schemaService.unCollapseAll();
+  }
 
-  /*
-
-   updateProps() {
-   this.props = [];
-   for(var i in this._schema.properties) {
-   this.props.push({
-   key: i,
-   data: this._schema.properties[i]
-   });
-   }
-   }
-
-   public controlTypes:Array<string> = ['string', 'number', 'array', 'boolean'];
-   public props:Array<any> = [];
-
-
-
-   constructor() {
-   }
-
-   getProperties() {
-   return this._schema.properties;
-   }
-
-
-   onKeyChanged() {
-   let newSchema:any = Object.assign({}, this.schema);
-   let newProperties = {};
-   this.props.forEach((p)=>{
-   newProperties[p.key] = p.data;
-   });
-   newSchema.properties = newProperties;
-   this.schema = newSchema;
-   }
-
-   onRemoveProperty(data:any) {
-   let i:number = this.props.indexOf(data);
-   this.props.splice(i, 1);
-   this.onKeyChanged();
-   }
-
-   getSchemaJsonString() {
-   return JSON.stringify(this.schema, null, 4);
-
-   }
-
-   public addProperty(type:string) {
-   if (type === 'string') {
-   this.schema.properties.untitled = {
-   type: 'string',
-   description: 'tbd'
-   };
-   } else if (type === 'boolean') {
-   this.schema.properties.untitled = {
-   type: 'boolean',
-   description: 'tbd'
-   };
-   }
-   this.updateProps();
-   }
-   */
 
 }

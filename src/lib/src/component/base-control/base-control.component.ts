@@ -1,10 +1,8 @@
-import {SchemaEditorService} from "../../service/schema-editor.service";
-import {EventEmitter, Input, Output} from "@angular/core";
+import {SchemaEditorService} from '../../service/schema-editor.service';
+import {EventEmitter, Input, Output} from '@angular/core';
 /**
  * Created by benjamindobler on 15.07.17.
  */
-
-
 
 
 export class BaseControl {
@@ -29,9 +27,10 @@ export class BaseControl {
   set parentPath(value: string) {
     this._parentPath = value;
     if (value) {
-      this.schemaService.registerControl(value);
+      this.schemaService.registerControl(this.path);
     }
   }
+
   get collapsed(): boolean {
     if (!this.schemaService.controlMap[this.path]) {
       return false;
@@ -55,8 +54,8 @@ export class BaseControl {
 
   private _parentPath: string = '';
 
-  public get path():string  {
-    if (this.parentPath!='') {
+  public get path(): string {
+    if (this.parentPath != '') {
       this.parentPath + '.' + this._data.key;
     }
     return this._data.key;
@@ -67,10 +66,9 @@ export class BaseControl {
   }
 
 
-  constructor(public schemaService:SchemaEditorService) {
+  constructor(public schemaService: SchemaEditorService) {
 
   }
-
 
 
 }

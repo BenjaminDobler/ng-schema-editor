@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {SchemaEditorService} from "../../service/schema-editor.service";
-import {BaseControl} from "../base-control/base-control.component";
+import {Component, OnInit} from '@angular/core';
+import {SchemaEditorService} from '../../service/schema-editor.service';
+import {BaseControl} from '../base-control/base-control.component';
 
 @Component({
   selector: 'boolean-control',
@@ -14,8 +14,7 @@ export class BooleanControlComponent extends BaseControl implements OnInit {
   formats: Array<string> = ['date-time', 'email', 'hostname', 'ipv4', 'ipv6', 'uri', 'uri-reference', 'uri-template', 'json-pointer', 'uuid'];
 
 
-
-  constructor(public schemaService:SchemaEditorService) {
+  constructor(public schemaService: SchemaEditorService) {
     super(schemaService);
   }
 

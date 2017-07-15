@@ -1,14 +1,13 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {BaseControl} from "../base-control/base-control.component";
-import {SchemaEditorService} from "../../service/schema-editor.service";
+import {Component, Input, OnInit} from '@angular/core';
+import {BaseControl} from '../base-control/base-control.component';
+import {SchemaEditorService} from '../../service/schema-editor.service';
 
 @Component({
   selector: 'object-control',
   templateUrl: './object-control.component.html',
   styleUrls: ['./object-control.component.css']
 })
-export class ObjectControlComponent extends BaseControl implements OnInit {
-
+export class ObjectControlComponent extends BaseControl {
 
 
   public controlTypes: Array<string> = ['string', 'number', 'array', 'boolean', 'object'];
@@ -19,18 +18,19 @@ export class ObjectControlComponent extends BaseControl implements OnInit {
   public root = false;
 
 
-
-  constructor(public schemaService:SchemaEditorService) {
+  constructor(public schemaService: SchemaEditorService) {
     super(schemaService);
   }
 
   updateProps() {
     this.props = [];
-    for (var i in this.data.data.properties) {
-      this.props.push({
-        key: i,
-        data: this.data.data.properties[i]
-      });
+    for (let i in this.data.data.properties) {
+      if (this.data.data.properties.hasOwnProperty(i)) {
+        this.props.push({
+          key: i,
+          data: this.data.data.properties[i]
+        });
+      }
     }
   }
 
@@ -61,10 +61,10 @@ export class ObjectControlComponent extends BaseControl implements OnInit {
     this.updateProps();
   }
 
-  onKeyChanged(data?:any) {
+  onKeyChanged(data?: any) {
     if (data) {
-        this.data.key = data;
-        this.keyChanged.emit();
+      this.data.key = data;
+      this.keyChanged.emit();
     } else {
       let newSchema: any = Object.assign({}, this.data.data);
       let newProperties = {};
