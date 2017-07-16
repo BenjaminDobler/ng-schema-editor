@@ -92,7 +92,7 @@ export class BaseControl {
   }
 
   addField(field: string) {
-    if (field === 'maxLength' || field === 'minLength') {
+    if (field === 'maxLength' || field === 'minLength' || field === 'minimum' || field === 'maximum') {
       this.data.data[field] = 0;
     } else if (field === 'enum') {
       this.data.data[field] = [];

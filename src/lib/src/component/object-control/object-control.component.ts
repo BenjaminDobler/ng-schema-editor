@@ -60,6 +60,10 @@ export class ObjectControlComponent extends BaseControl {
         description: 'tbd',
         properties: {}
       };
+    } else if (type === 'number') {
+      this.data.data.properties.untitled = {
+        type: 'number'
+      };
     }
     this.updateProps();
   }
