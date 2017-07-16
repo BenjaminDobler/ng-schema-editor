@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
 import {BaseControl} from '../base-control/base-control.component';
 import {SchemaEditorService} from '../../service/schema-editor.service';
 
@@ -11,6 +11,7 @@ export class ObjectControlComponent extends BaseControl {
 
 
   public controlTypes: Array<string> = ['string', 'number', 'array', 'boolean', 'object'];
+  public fields:Array<string> = ['required', 'description'];
   public props: Array<any> = [];
 
 
@@ -21,6 +22,8 @@ export class ObjectControlComponent extends BaseControl {
   constructor(public schemaService: SchemaEditorService) {
     super(schemaService);
   }
+
+
 
   updateProps() {
     this.props = [];
@@ -82,6 +85,18 @@ export class ObjectControlComponent extends BaseControl {
     this.props.splice(i, 1);
     this.onKeyChanged();
   }
+
+  getUnrequiredProperties() {
+    let keys:Array<string> = [];
+    this.props.forEach((p) => {
+      if (this.data.data.hasOwnProperty('required') && this.data.data.required.indexOf(p.key)===-1) {
+        keys.push(p.key);
+      }
+    });
+    return keys;
+  }
+
+
 
 
 }

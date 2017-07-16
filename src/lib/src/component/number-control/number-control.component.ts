@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BaseControl} from '../base-control/base-control.component';
 import {SchemaEditorService} from '../../service/schema-editor.service';
 
@@ -7,7 +7,7 @@ import {SchemaEditorService} from '../../service/schema-editor.service';
   templateUrl: './number-control.component.html',
   styleUrls: ['./number-control.component.css']
 })
-export class NumberControlComponent extends BaseControl implements OnInit {
+export class NumberControlComponent extends BaseControl {
 
 
   @Input()
@@ -21,7 +21,5 @@ export class NumberControlComponent extends BaseControl implements OnInit {
     super(schemaService);
   }
 
-  ngOnInit() {
-  }
 
 }

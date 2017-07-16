@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {SchemaEditorService} from '../../service/schema-editor.service';
 import {BaseControl} from '../base-control/base-control.component';
 
@@ -7,7 +7,7 @@ import {BaseControl} from '../base-control/base-control.component';
   templateUrl: './boolean-control.component.html',
   styleUrls: ['./boolean-control.component.css']
 })
-export class BooleanControlComponent extends BaseControl implements OnInit {
+export class BooleanControlComponent extends BaseControl {
 
 
   fields: Array<string> = [];
@@ -16,9 +16,6 @@ export class BooleanControlComponent extends BaseControl implements OnInit {
 
   constructor(public schemaService: SchemaEditorService) {
     super(schemaService);
-  }
-
-  ngOnInit() {
   }
 
   onKeyChanged(newKey: string) {

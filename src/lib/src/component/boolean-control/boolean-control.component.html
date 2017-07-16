@@ -1,19 +1,32 @@
-<div class="header" >
-  <div class="property-name" contenteditable #key (blur)="onKeyChanged(key.textContent)">{{data.key}}</div>
-  <div class="spacer"></div>
-  <div class="type-badge" (click)="collapsed=!collapsed">
-    Boolean
+<div [style.background]="getBackground()">
+
+  <div class="header">
+    <md-icon (click)="collapsed=!collapsed" *ngIf="collapsed">keyboard_arrow_right</md-icon>
+    <md-icon (click)="collapsed=!collapsed" *ngIf="!collapsed">keyboard_arrow_down</md-icon>
+    <div class="property-name" contenteditable #key (blur)="onKeyChanged(key.textContent)">{{data.key}}</div>
+    <div class="spacer"></div>
+    <div class="type-badge">
+      Boolean
+    </div>
+    <md-icon class="option-menu" [mdMenuTriggerFor]="appMenu">more_vert</md-icon>
+
+    <md-menu #appMenu="mdMenu">
+      <button md-menu-item (click)="deleteProperty()">Remove</button>
+      <button md-menu-item [mdMenuTriggerFor]="appMenu2">Add Field</button>
+    </md-menu>
+
+    <md-menu #appMenu2="mdMenu">
+      <button (click)="addField(field)" md-menu-item *ngFor="let field of fields">{{field}}</button>
+    </md-menu>
+
   </div>
-</div>
 
-<div class="content" *ngIf="!collapsed">
-  {{path}}
-
+<div class="content" *ngIf="!collapsed" >
   <div class="field-container" *ngIf="data.data.hasOwnProperty('description')">
     <md-input-container>
       <input mdInput placeholder="Description" [(ngModel)]="data.data.description">
     </md-input-container>
-    <button (click)="deleteField('description')">-</button>
+    <md-icon (click)="deleteField('description')">remove_circle</md-icon>
   </div>
 
 
@@ -21,15 +34,12 @@
     <md-select placeholder="Format" [(ngModel)]="data.data.format">
       <md-option *ngFor="let format of formats" [value]="format">{{ format }}</md-option>
     </md-select>
-    <button (click)="deleteField('format')">-</button>
+    <md-icon (click)="deleteField('format')">remove_circle</md-icon>
   </div>
 
 
 </div>
-<md-select placeholder="Add Property" [(ngModel)]="myState" floatPlaceholder="never">
-  <md-option (click)="addField(state)" *ngFor="let state of fields">{{ state }}</md-option>
-</md-select>
-<button (click)="deleteProperty()">-</button>
 
 
 
+</div>

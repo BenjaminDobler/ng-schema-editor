@@ -1,13 +1,66 @@
-<div class="header">
-  <div class="property-name" contenteditable #key (blur)="onKeyChanged(key.textContent)">{{data.key}}</div>
-  <div class="spacer"></div>
-  <div class="type-badge" (click)="collapsed=!collapsed">
-    Object
-  </div>
-</div>
+<div [style.background]="getBackground()">
 
-<div class="content" *ngIf="!collapsed">
-  {{path}}
+  <div class="header">
+    <md-icon (click)="collapsed=!collapsed" *ngIf="collapsed">keyboard_arrow_right</md-icon>
+    <md-icon (click)="collapsed=!collapsed" *ngIf="!collapsed">keyboard_arrow_down</md-icon>
+    <div class="property-name" contenteditable #key (blur)="onKeyChanged(key.textContent)">{{data.key}}</div>
+    <div class="spacer"></div>
+    <div class="type-badge">
+      Object
+    </div>
+    <div class="option-menu">
+    <md-icon [mdMenuTriggerFor]="appMenu">more_vert</md-icon>
+    </div>
+    <md-menu #appMenu="mdMenu">
+      <button md-menu-item (click)="deleteProperty()">Remove</button>
+      <button md-menu-item [mdMenuTriggerFor]="appMenu2">Add Field</button>
+      <button md-menu-item [mdMenuTriggerFor]="propertyMenu">Add Property</button>
+    </md-menu>
+
+    <md-menu #appMenu2="mdMenu">
+      <button (click)="addField(field)" md-menu-item *ngFor="let field of fields">{{field}}</button>
+    </md-menu>
+
+    <md-menu #propertyMenu="mdMenu">
+      <button md-menu-item (click)="addProperty(type)" *ngFor="let type of controlTypes"> {{type}} </button>
+    </md-menu>
+
+  </div>
+
+
+
+
+<div class="content object-control-content" style="padding-right: 20px" *ngIf="!collapsed">
+
+
+  <div class="field-container" *ngIf="data.data.hasOwnProperty('description')">
+    <md-input-container>
+      <input mdInput placeholder="Description" [(ngModel)]="data.data.description">
+    </md-input-container>
+    <md-icon (click)="deleteField('description')">remove_circle</md-icon>
+  </div>
+
+
+
+  <div *ngIf="data.data.required">
+    Required
+    <ul>
+      <li class="enum-item" *ngFor="let e of data.data.required;let i = index">
+        {{e}}
+        <md-icon (click)="data.data.required.splice(i,1)">remove_circle</md-icon>
+      </li>
+      <md-icon [mdMenuTriggerFor]="requiredMenu">add_circle</md-icon>
+    </ul>
+
+    <md-menu #requiredMenu="mdMenu">
+      <button md-menu-item (click)="data.data.required.push(req)" *ngFor="let req of getUnrequiredProperties()"> {{req}} </button>
+    </md-menu>
+
+  </div>
+
+
+
+
 
   <div *ngFor="let item of props">
     <number-control *ngIf="item.data.type === 'number'" [data]="item"></number-control>
@@ -19,9 +72,7 @@
                     (keyChanged)="onKeyChanged()" [data]="item" [parentPath]="path"></object-control>
   </div>
 
-  <md-select placeholder="Add Property" [(ngModel)]="myState" floatPlaceholder="never">
-    <md-option (click)="addProperty(state)" *ngFor="let state of controlTypes">{{ state }}</md-option>
-  </md-select>
 
 
+</div>
 </div>

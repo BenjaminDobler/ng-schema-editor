@@ -7,48 +7,23 @@
   margin-bottom: 10px;
 }
 
+
+@import "../control.common.css";
+
 md-input-container {
   width: 100%;
   flex: 1;
 }
 
-.field-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+.enum-item md-icon {
+  opacity: 0;
+  transform: translateX(50%);
+  transition-property: opacity, transform;
+  transition-duration: 350ms;
 }
 
-.field-container md-input-container {
-  flex: 1;
-}
-
-.field-container md-select {
-
-}
-
-.type-badge {
-  background: #3367d6;
-  border-radius: 3px;
-  padding: 3px;
-  color: #fff
-}
-
-.spacer {
-  flex: 1;
-}
-
-.header {
-  display: flex;
-  width: 100%;
-  background: #d0d0d0;
-}
-
-.property-name {
-  padding-left: 5px;
-}
-
-.content {
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-right: 5px;
+.enum-item:hover md-icon {
+  opacity: 1;
+  transform: translateX(0%);
 }
