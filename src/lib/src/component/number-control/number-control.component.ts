@@ -10,7 +10,7 @@ import {SchemaEditorService} from '../../service/schema-editor.service';
 export class NumberControlComponent extends BaseControl {
 
 
-  fields: Array<string> = ['minimum', 'maximum'];
+  fields: Array<string> = ['minimum', 'maximum', 'multipleOf', 'exclusiveMaximum', 'exclusiveMinimum'];
 
 
   @Input()

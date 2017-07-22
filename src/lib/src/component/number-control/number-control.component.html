@@ -5,7 +5,7 @@
     <div class="property-name" contenteditable #key (blur)="onKeyChanged(key.textContent)">{{data.key}}</div>
     <div class="spacer"></div>
     <div class="type-badge">
-      Number
+      {{data.data.type}}
     </div>
     <div class="option-menu">
       <md-icon [mdMenuTriggerFor]="appMenu">more_vert</md-icon>
@@ -53,6 +53,21 @@
         <input mdInput type="number" placeholder="maximum" [(ngModel)]="data.data.maximum">
       </md-input-container>
       <md-icon (click)="deleteField('maximum')">remove_circle</md-icon>
+    </div>
+
+
+    <div *ngIf="data.data.hasOwnProperty('exclusiveMaximum')">
+      <section class="example-section">
+        <md-checkbox class="example-margin" [(ngModel)]="data.data.exclusiveMaximum">exclusiveMaximum</md-checkbox>
+      </section>
+      <md-icon (click)="deleteField('exclusiveMaximum')">remove_circle</md-icon>
+    </div>
+
+    <div *ngIf="data.data.hasOwnProperty('exclusiveMinimum')">
+      <section class="example-section">
+        <md-checkbox class="example-margin" [(ngModel)]="data.data.exclusiveMinimum">exclusiveMinimum</md-checkbox>
+      </section>
+      <md-icon (click)="deleteField('exclusiveMinimum')">remove_circle</md-icon>
     </div>
 
 

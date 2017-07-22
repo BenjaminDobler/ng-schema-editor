@@ -1,0 +1,29 @@
+
+:host {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+
+@import "../control.common.css";
+
+md-input-container {
+  width: 100%;
+  flex: 1;
+}
+
+
+.enum-item md-icon {
+  opacity: 0;
+  transform: translateX(50%);
+  transition-property: opacity, transform;
+  transition-duration: 350ms;
+}
+
+.enum-item:hover md-icon {
+  opacity: 1;
+  transform: translateX(0%);
+}

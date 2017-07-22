@@ -63,13 +63,15 @@
 
 
   <div *ngFor="let item of props">
-    <number-control *ngIf="item.data.type === 'number'" [data]="item"></number-control>
+    <number-control *ngIf="item.data.type === 'number' || item.data.type === 'integer'" [data]="item"></number-control>
     <boolean-control *ngIf="item.data.type === 'boolean'" (removeProperty)="onRemoveProperty($event)"
                      (keyChanged)="onKeyChanged()" [data]="item" [parentPath]="path"></boolean-control>
     <string-control *ngIf="item.data.type === 'string'" (removeProperty)="onRemoveProperty($event)"
                     (keyChanged)="onKeyChanged()" [data]="item" [parentPath]="path"></string-control>
     <object-control *ngIf="item.data.type === 'object'" (removeProperty)="onRemoveProperty($event)"
                     (keyChanged)="onKeyChanged()" [data]="item" [parentPath]="path"></object-control>
+    <array-control *ngIf="item.data.type === 'array'" (removeProperty)="onRemoveProperty($event)"
+                    (keyChanged)="onKeyChanged()" [data]="item" [parentPath]="path"></array-control>
   </div>
 
 

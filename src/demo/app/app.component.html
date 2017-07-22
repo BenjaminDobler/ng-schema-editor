@@ -1,4 +1,11 @@
 <div style="display: flex;width:100%">
+  <input type="file" (change)="onFileSelect($event)" >
+
+
+  <ul>
+    <li *ngFor="let resource of resources" (click)="onSelectResource(resource)">{{resource.name}}</li>
+  </ul>
+
 
   <schema-editor #editor style="min-width: 300px" [schema]="schema"></schema-editor>
   <pre>{{editor.getSchemaJsonString()}}</pre>

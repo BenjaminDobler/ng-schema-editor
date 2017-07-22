@@ -5,7 +5,7 @@
     <div class="property-name" contenteditable #key (blur)="onKeyChanged(key.textContent)">{{data.key}}</div>
     <div class="spacer"></div>
     <div class="type-badge">
-      String
+      Array
     </div>
     <div class="option-menu">
       <md-icon [mdMenuTriggerFor]="appMenu">more_vert</md-icon>
@@ -66,6 +66,20 @@
         <md-icon (click)="data.data.enum.push('')">add_circle</md-icon>
       </ul>
     </div>
+
+
+
+
+    <div *ngIf="data.data.items">
+      Items
+      <ul *ngIf="data.data.items.hasOwnProperty('oneOf')">
+        <li *ngFor="let oneOf of data.data.items.oneOf">
+          {{oneOf['#ref']}}
+        </li>
+      </ul>
+
+    </div>
+
 
   </div>
 

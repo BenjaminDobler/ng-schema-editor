@@ -99,7 +99,9 @@ export class BaseControl {
     } else if (field === 'description' || field === 'format') {
       this.data.data[field] = '';
     } else if (field === 'required') {
-      this.data.data[field] = [];
+      this.data.data[field] = false;
+    } else if (field === 'exclusiveMinimum' || field === 'exclusiveMaximum') {
+      this.data.data[field] = false;
     }
   }
 

@@ -8,13 +8,14 @@ import {MaterialModule} from '@angular/material';
 import {BooleanControlComponent} from './component/boolean-control/boolean-control.component';
 import {ObjectControlComponent} from './component/object-control/object-control.component';
 import {SchemaEditorService} from './service/schema-editor.service';
+import {ArrayControlComponent} from './component/array-control/array-control.component';
 
 
 @NgModule({
   imports: [
     CommonModule, MaterialModule, FormsModule
   ],
-  declarations: [NumberControlComponent, SchemaEditorComponent, StringControlComponent, BooleanControlComponent, ObjectControlComponent],
+  declarations: [NumberControlComponent, SchemaEditorComponent, StringControlComponent, BooleanControlComponent, ObjectControlComponent, ArrayControlComponent],
   exports: [SchemaEditorComponent],
   providers: [SchemaEditorService]
 })
